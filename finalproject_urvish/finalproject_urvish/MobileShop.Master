@@ -1,0 +1,124 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MobileShop.Master.cs" Inherits="MobileShop.MobileShop" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>MobileShop</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/Images/icon.png" />
+
+
+    <style type="text/css">
+        .jumbotron {
+            background-color: #00ace6;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            padding: 1px;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            font-size: x-large;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 80px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+        }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+        .fa-facebook {
+            background: #0059b3;
+            color: white;
+            border-radius: 50%;
+        }
+
+
+        .fa-instagram {
+            background: #b30059;
+            color: white;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+
+    <form id="form1" runat="server">
+
+        <nav class="navbar navbar-light bg-light justify-content-between">
+
+            <asp:ImageButton ID="ImageButton1" runat="server" Height="124px" ImageUrl="~/Images/mslogo.png" PostBackUrl="~/default.aspx" Width="225px" />
+
+            <asp:Menu ID="Menu1" runat="server" BackColor="#ff1a75" DynamicHorizontalOffset="2" Font-Bold="False" Font-Italic="False" Font-Names="Verdana" Font-Size="XX-Large" Font-Strikeout="False" Font-Underline="False" ForeColor="White" Orientation="Horizontal" StaticSubMenuIndent="10px">
+                <DynamicHoverStyle BackColor="#006080" ForeColor="White" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#006080" />
+                <DynamicSelectedStyle BackColor="#1C5E55" />
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/ios.aspx" Text="iOS" Value="iOS"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/android.aspx" Text="Android" Value="Android"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/feedback.aspx" Text="Feedback" Value="Feedback"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/contact_us.aspx" Text="Contact us" Value="Contact us"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/about_us.aspx" Text="About us" Value="About us"></asp:MenuItem>
+
+                </Items>
+                <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticSelectedStyle BackColor="#1C5E55" />
+            </asp:Menu>
+
+            <asp:ImageButton ID="ImageButton2" runat="server" Height="70px" ImageUrl="~/Images/cartlogo.png" PostBackUrl="~/Cart.aspx" Width="70px" />
+
+        </nav>
+        <div class="jumbotron ">
+            <h1>MobileShop</h1>
+            <h2>You can find all types of mobiles here.</h2>
+            <br />
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <br />
+        <footer class="text-center text-capitalize">
+            <label>copyright &copy; Mobile Shop, all rights reserved.</label>
+
+            <p>
+                To contact us, Call us at <a href="phone:905-978-2900">905-978-2900</a>
+                <br />
+                Email us at
+                        <asp:HyperLink ID="linkMail" runat="server" NavigateUrl="mailto:Umahant9006@conestogac.on.ca">Umahant9006@conestogac.on.ca</asp:HyperLink>
+            </p>
+            <a href="https://www.facebook.com/MahantUrvish" class="fa fa-facebook"></a>
+
+            <a href="https://www.instagram.com/m__urvish/" class="fa fa-instagram"></a>
+        </footer>
+
+    </form>
+
+</body>
+
+</html>
